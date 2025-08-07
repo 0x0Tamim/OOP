@@ -9,14 +9,19 @@ public class Main {
         System.out.println(Arrays.toString(students));
 
         Student tamim = new Student();
+        tamim.name = "Tamim Uz Zaman";
+        tamim.rollNo = 298;
+
         System.out.println(tamim);
         System.out.println(tamim.name);
+        System.out.println(tamim.rollNo);
+        System.out.println(tamim.marks);
 
     }
 }
     class Student{
         String name;
         int rollNo;
-        float marks;
+        float marks = 90;
 
     }
