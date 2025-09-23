@@ -1,50 +1,72 @@
-import java.util.Arrays;
-
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+// Main class containing the entry point of the program
 public class Main {
     public static void main(String[] args) {
 
-        //Student[] students = new Student[5];
-        //System.out.println(Arrays.toString(students));
+        // Creating objects of the Student class using different constructors
 
-        Student tamim = new Student("Tamim",298,64);
+        // Creating a Student object using the parameterized constructor
+        Student tamim = new Student("Tamim", 298, 64);
+
+        // Creating a Student object using the default constructor
         Student abir = new Student();
-        Student random = new Student(tamim);
-        //tamim.name = "Tamim Uz Zaman";
-        //tamim.rollNo = 298;
 
-        System.out.println(tamim);
-        System.out.println(tamim.name);
-        System.out.println(tamim.rollNo);
-        System.out.println(tamim.marks);
+        // Creating a new Student object using the copy constructor
+        Student random = new Student(tamim); // Copies data from 'tamim'
 
-        System.out.println(abir.name);
-        System.out.println(abir.rollNo);
-        System.out.println(abir.marks);
+        // Printing the object itself (will show class name + hash unless toString is overridden)
+        System.out.println(tamim); // Without overriding toString(), this prints something like: Student@1b6d3586
 
-        System.out.println(random.name);
+        // Accessing and printing individual fields of the 'tamim' object
+        System.out.println(tamim.name);     // Output: Tamim
+        System.out.println(tamim.rollNo);   // Output: 298
+        System.out.println(tamim.marks);    // Output: 64.0
+
+        // Accessing and printing individual fields of the 'abir' object (default values)
+        System.out.println(abir.name);      // Output: Abir
+        System.out.println(abir.rollNo);    // Output: 86
+        System.out.println(abir.marks);     // Output: 79.0
+
+        // Accessing and printing the name of the copied object
+        System.out.println(random.name);    // Output: Tamim (copied from 'tamim')
     }
 }
-    class Student{
-        String name;
-        int rollNo;
-        float marks ;
 
-        Student(Student other){
-            this.name = other.name;
-            this.rollNo = other.rollNo;
-            this.marks = other.marks;
-        }
-        Student(){
-            this.name = "Abir";
-            this.rollNo = 86;
-            this.marks = 79;
-        }
-        Student(String name,int rollNo,float marks){
-          this.name = name;
-          this.rollNo = rollNo;
-          this.marks = marks;
-        }
+// Class representing a Student
+class Student {
+    // Fields (also called instance variables or attributes)
+    String name;
+    int rollNo;
+    float marks;
 
+    // Copy Constructor
+    // Used to create a new Student object by copying the values from another Student object
+    Student(Student other) {
+        this.name = other.name;       // Copying name
+        this.rollNo = other.rollNo;   // Copying roll number
+        this.marks = other.marks;     // Copying marks
     }
+
+    // Default Constructor (no parameters)
+    // Initializes the object with some default values
+    Student() {
+        this.name = "Abir";
+        this.rollNo = 86;
+        this.marks = 79;
+    }
+
+    // Parameterized Constructor
+    // Allows setting custom values when the object is created
+    Student(String name, int rollNo, float marks) {
+        this.name = name;         // 'this' refers to the current object's field
+        this.rollNo = rollNo;
+        this.marks = marks;
+    }
+
+    // (Optional but recommended) Override the toString method for readable object print
+    /*
+    @Override
+    public String toString() {
+        return "Student{name='" + name + "', rollNo=" + rollNo + ", marks=" + marks + "}";
+    }
+    */
+}
