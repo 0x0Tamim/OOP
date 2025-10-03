@@ -16,4 +16,5 @@ public class Singleton {
         return instance;
     }
 }
-//🧠 Singleton ensures only one object exists across your whole program — useful for things like logging, config management, database connections, etc.
+//🧠 Singleton ensures only one object exists across your whole program —
+// useful for things like logging, config management, database connections, etc.
