@@ -22,6 +22,12 @@ public class Box {
         this.w = w;
     }
 
+    Box(Box old){
+        this.l = old.l;
+        this.h = old.h;
+        this.w = old.w;
+    }
+
     public void info(){
         System.out.println("Running the box");
     }
