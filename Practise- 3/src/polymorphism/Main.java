@@ -5,10 +5,13 @@ public class Main {
         Shapes shape = new Shapes();
         Shapes square = new Square();
         Circle circle = new Circle();
+        Square square1 = new Square();
 
         shape.area();
         square.area();
         circle.area();
+        square1.area();
+
 
 
     }
