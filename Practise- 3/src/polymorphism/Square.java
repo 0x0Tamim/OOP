@@ -1,7 +1,7 @@
 package polymorphism;
 
 public class Square extends Shapes {
-    void area(){
+    void Sarea(){
         System.out.println("Area of Square");
     }
 }
