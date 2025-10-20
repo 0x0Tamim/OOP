@@ -23,7 +23,7 @@ public class Student {
 
         In Java, it means:
         ✅ Making variables private
-✅ Providing public getters/setters to access and update them
+        ✅ Providing public getters/setters to access and update them
 
         🎯 Why use Encapsulation?
 
